@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./src/css/style.css">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
                 <h1 class="name">Lynn Chiang</h1>
                 <span class="greeting">A Front-End Web Developer</span>
             </div>
-            <div class="social-medias">
+            <div class="social-medias-container">
                 <a class="social-media email" target="_blank" href="mailto:lynnchiangtw@gmail.com">
                     <i class="fas fa-envelope-square"></i>
                 </a>
@@ -79,6 +79,15 @@
         </section>
         <section class="section section-3" id="portfolio">
             <h2>PORTFOLIO</h2>
+            <div class="portfolio-menu">
+                <ul class="portfolio-list">
+                    <li class="portfolio-item active-portfolio" data-skill="all">All</li>
+                    <li class="portfolio-item" data-skill="javascript">JavaScript</li>
+                    <li class="portfolio-item" data-skill="react">React</li>
+                    <li class="portfolio-item" data-skill="node.js">Node.js</li>
+                </ul>
+            </div>
+            <div class="portfolio-cards-container"></div>
         </section>
     </main>
 
@@ -89,7 +98,7 @@
             more information about what
             I've been working on.
         </p>
-        <div class="social-medias">
+        <div class="social-medias-container">
             <a class="social-media email" target="_blank" href="mailto:lynnchiangtw@gmail.com">
                 <i class="fas fa-envelope-square"></i>
             </a>
@@ -104,7 +113,7 @@
         </small>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module" src="./src/js/script.js"></script>
 </body>
 
 </html>
