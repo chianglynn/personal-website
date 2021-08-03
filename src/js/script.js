@@ -53,10 +53,10 @@ function renderPortfolioCards(portfolio) {
                     <p class="portfolio-skill">${project.skills.join(' / ')}</p>
                     <h3>${project.title}</h3>
                     <div class="portfolio-links-container">
-                        <a class="portfolio-link"
+                        <a class="portfolio-link github-link"
                             href="${project.github}"
                             target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a class="portfolio-link"
+                        <a class="portfolio-link demo-link"
                             href="${project.demo}"
                             target="_blank" rel="noopener noreferrer">Demo</a>
                     </div>
