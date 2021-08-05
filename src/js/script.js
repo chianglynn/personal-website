@@ -1,43 +1,69 @@
 import { portfolio } from "./portfolio.js";
 
 // Variables
-const header = document.querySelector('.header');
+const container = document.querySelector('.container');
+const navContainer = document.querySelector('.nav');
 const navToggleIcon = document.querySelector('.nav-toggle-icon');
+const hamburgerIcon = document.querySelector('.fa-bars');
+const closeIcon = document.querySelector('.fa-times');
 const navMenu = document.querySelector('.nav-menu');
 const navLink = document.querySelectorAll('.nav-link');
 const scrollTop = document.querySelector('.scroll-top');
-const section2 = document.querySelector('.section-2');
+const sectionOne = document.querySelector('.section-1');
 const portfolioCardsContainer = document.querySelector('.portfolio-cards-container');
 const portfolioMenu = document.querySelector('.portfolio-menu');
 const portfolioItem = document.querySelectorAll('.portfolio-item');
 
 // Functions
+function toggleNavMenuIcon() {
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+}
+
 function toggleNavMenu() {
+    toggleNavMenuIcon();
     navMenu.classList.toggle('toggle-nav-menu');
+}
+
+function closeNavMenu() {
+    toggleNavMenuIcon();
+    navMenu.classList.remove('toggle-nav-menu');
+}
+
+function removeActiveNavLink() {
+    navLink.forEach(link => link.classList.remove('active-nav-link'));
 }
 
 function navMenuLinkActionANDCloseMenu(e) {
     e.preventDefault();
+    if (e.target.classList.contains('logo')) {
+        sectionOne.scrollIntoView();
+        removeActiveNavLink();
+        navLink[0].classList.add('active-nav-link');
+        closeNavMenu();
+    }
     if (e.target.classList.contains('nav-link')) {
         const id = e.target.getAttribute('href');
         document.querySelector(id).scrollIntoView();
-        navLink.forEach(link => link.classList.remove('active-nav-link'));
+        removeActiveNavLink();
         e.target.classList.add('active-nav-link');
+        closeNavMenu();
     }
     if (e.target.classList.contains('external-link')) {
         const href = e.target.getAttribute('href');
         window.open(href, '_blank', 'noopener');
+        closeNavMenu();
     }
-    navMenu.classList.remove('toggle-nav-menu');
+
 }
 
 function showScrollTop(entries) {
     const [entry] = entries;
-    if (!entry.isIntersecting) scrollTop.classList.remove('show-scroll-top');
+    if (entry.isIntersecting) scrollTop.classList.remove('show-scroll-top');
     else scrollTop.classList.add('show-scroll-top');
 }
 
-const section2Observer = new IntersectionObserver(showScrollTop, {
+const sectionOneObserver = new IntersectionObserver(showScrollTop, {
     root: null,
     threshold: 0,
 });
@@ -102,8 +128,10 @@ function filterPortfolioCards(e) {
 // On Load
 renderPortfolioCards(portfolio);
 
-// Event listeners and observer
+// 0bserver
+sectionOneObserver.observe(sectionOne);
+
+// Event listeners
 navToggleIcon.addEventListener('click', toggleNavMenu);
-navMenu.addEventListener('click', navMenuLinkActionANDCloseMenu);
+navContainer.addEventListener('click', navMenuLinkActionANDCloseMenu);
 portfolioMenu.addEventListener('click', filterPortfolioCards);
-section2Observer.observe(section2);
