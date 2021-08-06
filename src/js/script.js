@@ -34,13 +34,18 @@ function removeActiveNavLink() {
     navLink.forEach(link => link.classList.remove('active-nav-link'));
 }
 
+function goToSectionOne() {
+    sectionOne.scrollIntoView();
+    removeActiveNavLink();
+    navLink[0].classList.add('active-nav-link');
+    if (navMenu.classList.contains('toggle-nav-menu')) closeNavMenu();
+}
+
 function navMenuLinkActionANDCloseMenu(e) {
     e.preventDefault();
     if (e.target.classList.contains('logo')) {
-        sectionOne.scrollIntoView();
-        removeActiveNavLink();
-        navLink[0].classList.add('active-nav-link');
-        closeNavMenu();
+        goToSectionOne();
+        if (navMenu.classList.contains('toggle-nav-menu')) closeNavMenu();
     }
     if (e.target.classList.contains('nav-link')) {
         const id = e.target.getAttribute('href');
@@ -134,4 +139,5 @@ sectionOneObserver.observe(sectionOne);
 // Event listeners
 navToggleIcon.addEventListener('click', toggleNavMenu);
 navContainer.addEventListener('click', navMenuLinkActionANDCloseMenu);
+scrollTop.addEventListener('click', goToSectionOne);
 portfolioMenu.addEventListener('click', filterPortfolioCards);
