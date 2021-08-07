@@ -474,6 +474,14 @@ h3 {
     .hidden {
         display: none;
     }
+
+    .overlay {
+        position        : fixed;
+        width           : 100vw;
+        height          : 100vh;
+        background-color: transparent;
+        z-index         : 1;
+    }
 }
 
 @media screen and (min-width:768px) {

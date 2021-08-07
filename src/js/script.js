@@ -1,13 +1,13 @@
 import { portfolio } from "./portfolio.js";
 
 // Variables
-const container = document.querySelector('.container');
 const navContainer = document.querySelector('.nav');
 const navToggleIcon = document.querySelector('.nav-toggle-icon');
 const hamburgerIcon = document.querySelector('.fa-bars');
 const closeIcon = document.querySelector('.fa-times');
 const navMenu = document.querySelector('.nav-menu');
 const navLink = document.querySelectorAll('.nav-link');
+const overlay = document.querySelector('.overlay');
 const scrollTop = document.querySelector('.scroll-top');
 const sectionOne = document.querySelector('.section-1');
 const portfolioCardsContainer = document.querySelector('.portfolio-cards-container');
@@ -23,11 +23,13 @@ function toggleNavMenuIcon() {
 function toggleNavMenu() {
     toggleNavMenuIcon();
     navMenu.classList.toggle('toggle-nav-menu');
+    overlay.classList.toggle('hidden');
 }
 
 function closeNavMenu() {
     toggleNavMenuIcon();
     navMenu.classList.remove('toggle-nav-menu');
+    overlay.classList.add('hidden');
 }
 
 function removeActiveNavLink() {
@@ -59,7 +61,6 @@ function navMenuLinkActionANDCloseMenu(e) {
         window.open(href, '_blank', 'noopener');
         closeNavMenu();
     }
-
 }
 
 function showScrollTop(entries) {
@@ -139,5 +140,6 @@ sectionOneObserver.observe(sectionOne);
 // Event listeners
 navToggleIcon.addEventListener('click', toggleNavMenu);
 navContainer.addEventListener('click', navMenuLinkActionANDCloseMenu);
+overlay.addEventListener('click', closeNavMenu);
 scrollTop.addEventListener('click', goToSectionOne);
 portfolioMenu.addEventListener('click', filterPortfolioCards);
