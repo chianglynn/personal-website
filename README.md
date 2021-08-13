@@ -16,16 +16,12 @@
 
 <details>
 <summary>Mobile</summary>
-<p>
 ![img](https://github.com/chianglynn/personal-website/blob/main/src/screenshot/screenshot-mobile.jpeg?raw=true)
-</p>
 </details>
 
 <details>
 <summary>Desktop</summary>
-<p>
 ![img](https://github.com/chianglynn/personal-website/blob/main/src/screenshot/screenshot-desktop.jpeg?raw=true)
-</p>
 </details>
 
 ### Links
