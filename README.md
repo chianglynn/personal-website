@@ -15,10 +15,12 @@
 ### Screenshot
 
 <details>
+<summary>Mobile</summary>
 ![img](https://github.com/chianglynn/personal-website/blob/main/src/screenshot/screenshot-mobile.jpeg?raw=true)
 </details>
 
 <details>
+<summary>Desktop</summary>
 ![img](https://github.com/chianglynn/personal-website/blob/main/src/screenshot/screenshot-desktop.jpeg?raw=true)
 </details>
 
