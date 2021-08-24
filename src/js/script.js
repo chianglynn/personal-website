@@ -12,7 +12,7 @@ const scrollTop = document.querySelector('.scroll-top');
 const sectionOne = document.querySelector('.section-1');
 const portfolioCardsContainer = document.querySelector('.portfolio-cards-container');
 const portfolioMenu = document.querySelector('.portfolio-menu');
-const portfolioItem = document.querySelectorAll('.portfolio-item');
+const portfolioList = document.querySelector('.portfolio-list')
 
 // Functions
 function toggleNavMenuIcon() {
@@ -74,6 +74,13 @@ const sectionOneObserver = new IntersectionObserver(showScrollTop, {
     threshold: 0,
 });
 
+function renderPortfolioCategories(portfolio) {
+    const categories = ['All', ...new Set(portfolio.map(project => project.category))];
+    const markup = categories.map(category => `<li class="portfolio-item" data-category="${category}">${category}</li>`).join('');
+    portfolioList.insertAdjacentHTML('afterbegin', markup);
+    portfolioList.querySelector('[data-category="All"]').classList.add('active-portfolio');
+}
+
 function renderPortfolioCards(portfolio) {
     const markup = portfolio.map(project => {
         return `
@@ -100,30 +107,32 @@ function renderPortfolioCards(portfolio) {
 }
 
 function filterPortfolioCards(e) {
+    const portfolioItem = document.querySelectorAll('.portfolio-item');
+
     if (e.target.classList.contains('portfolio-item')) {
         const cards = document.querySelectorAll('.portfolio-card');
-        const skillFilter = e.target.dataset.skill;
+        const categoryFilter = e.target.dataset.category.toLowerCase();
 
         portfolioItem.forEach(item => item.classList.remove('active-portfolio'));
         e.target.classList.add('active-portfolio');
 
-        if (skillFilter === 'all') cards.forEach(card => {
+        if (categoryFilter === 'all') cards.forEach(card => {
             card.classList.remove('animation-show', 'animation-hide');
             setTimeout(() => {
                 card.style.display = 'block';
                 card.classList.add('animation-show');
             }, 250);
         });
-        if (skillFilter !== 'all') cards.forEach(card => {
-            const skills = card.textContent.toLowerCase();
+        if (categoryFilter !== 'all') cards.forEach(card => {
+            const category = card.querySelector('.portfolio-skill').textContent.toLowerCase();
             card.classList.remove('animation-show', 'animation-hide');
-            if (skills.includes(skillFilter)) {
+            if (category.includes(categoryFilter)) {
                 setTimeout(() => {
                     card.style.display = 'block';
                     card.classList.add('animation-show');
                 }, 230);
             }
-            if (!skills.includes(skillFilter)) {
+            if (!category.includes(categoryFilter)) {
                 card.classList.add('animation-hide');
                 setTimeout(() => card.style.display = 'none', 230);
             }
@@ -132,6 +141,7 @@ function filterPortfolioCards(e) {
 }
 
 // On Load
+renderPortfolioCategories(portfolio);
 renderPortfolioCards(portfolio);
 
 // 0bserver
