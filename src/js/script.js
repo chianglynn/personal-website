@@ -1,3 +1,4 @@
+import { skills } from "./skills.js";
 import { portfolio } from "./portfolio.js";
 
 // Variables
@@ -10,11 +11,12 @@ const navLink = document.querySelectorAll('.nav-link');
 const overlay = document.querySelector('.overlay');
 const scrollTop = document.querySelector('.scroll-top');
 const sectionOne = document.querySelector('.section-1');
+const skillList = document.querySelector('.skill-list');
 const portfolioCardsContainer = document.querySelector('.portfolio-cards-container');
 const portfolioMenu = document.querySelector('.portfolio-menu');
 const portfolioList = document.querySelector('.portfolio-list')
 
-// Functions
+// Nav Functions
 function toggleNavMenuIcon() {
     hamburgerIcon.classList.toggle('hidden');
     closeIcon.classList.toggle('hidden');
@@ -73,6 +75,12 @@ const sectionOneObserver = new IntersectionObserver(showScrollTop, {
     root: null,
     threshold: 0,
 });
+
+// Rendering functions
+function renderSkillList(skills) {
+    const markup = skills.map(skill => `<li class="skill-item">${skill}</li>`).join('');
+    skillList.insertAdjacentHTML('afterbegin', markup);
+}
 
 function renderPortfolioCategories(portfolio) {
     const categories = ['All', ...new Set(portfolio.map(project => project.category))];
@@ -141,6 +149,7 @@ function filterPortfolioCards(e) {
 }
 
 // On Load
+renderSkillList(skills);
 renderPortfolioCategories(portfolio);
 renderPortfolioCards(portfolio);
 
