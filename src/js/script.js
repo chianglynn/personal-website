@@ -1,5 +1,4 @@
-import { skills } from "./skills.js";
-import { portfolio } from "./portfolio.js";
+import { skills, portfolio } from "./data.js";
 
 // Variables
 const navContainer = document.querySelector('.nav');
