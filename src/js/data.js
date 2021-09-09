@@ -33,4 +33,13 @@ export const portfolio = [
         image: 'https://github.com/chianglynn/frontendmentor-rest-countries-api-with-color-theme-switcher/raw/main/src/screenshot/screenshot-light.png?raw=true',
         skills: ['HTML', 'CSS', 'JavaScript'],
     },
+    {
+        id: 3,
+        category: 'JavaScript',
+        title: 'Room homepage',
+        github: 'https://github.com/chianglynn/frontendmentor-room-homepage',
+        demo: 'https://chianglynn.github.io/frontendmentor-room-homepage/',
+        image: 'https://github.com/chianglynn/frontendmentor-room-homepage/blob/main/src/screenshot/screenshot-desktop.png?raw=true',
+        skills: ['HTML', 'SCSS', 'JavaScript'],
+    },
 ];
