@@ -92,9 +92,9 @@ function renderPortfolioCards(portfolio) {
     const markup = portfolio.map(project => {
         return `
             <div class="portfolio-card">
-                <img class="portfolio-image"
-                    src="${project.image}"
-                    alt="${project.title}">
+                <div class="portfolio-image">
+                    <img src="${project.image}" alt="${project.title}">
+                </div>
                 <div class="portfolio-information">
                     <p class="portfolio-skill">${project.skills.join(' / ')}</p>
                     <h3>${project.title}</h3>
