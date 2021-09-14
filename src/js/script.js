@@ -14,6 +14,7 @@ const skillList = document.querySelector('.skill-list');
 const portfolioCardsContainer = document.querySelector('.portfolio-cards-container');
 const portfolioMenu = document.querySelector('.portfolio-menu');
 const portfolioList = document.querySelector('.portfolio-list')
+const copyright = document.querySelector('.copyright');
 
 // Nav Functions
 function toggleNavMenuIcon() {
@@ -147,10 +148,16 @@ function filterPortfolioCards(e) {
     }
 }
 
+function renderYear() {
+    const currentYear = new Date().getFullYear();
+    copyright.insertAdjacentHTML('beforeend', currentYear);
+}
+
 // On Load
 renderSkillList(skills);
 renderPortfolioCategories(portfolio);
 renderPortfolioCards(portfolio);
+renderYear();
 
 // 0bserver
 sectionOneObserver.observe(sectionOne);
