@@ -145,6 +145,10 @@ h2 {
     height         : var(--height-header);
 }
 
+.nav-item:hover {
+    opacity: .7;
+}
+
 .scroll-top {
     visibility      : hidden;
     position        : fixed;
@@ -275,6 +279,10 @@ h2 {
     cursor: pointer;
 }
 
+.portfolio-item:hover {
+    opacity: .7;
+}
+
 .active-portfolio {
     position  : relative;
     transition: .3s;
@@ -361,11 +369,16 @@ h2 {
     align-self: end;
 }
 
+
 .portfolio-link {
     padding      : .3rem .6rem;
     border       : 2px solid var(--color-text);
     border-radius: .5rem;
     box-shadow   : 0 2px 2px var(--color-border);
+}
+
+.portfolio-link:not(:last-child) {
+    margin-right: var(--margin-1);
 }
 
 .portfolio-link:hover {
@@ -459,10 +472,6 @@ h2 {
     .nav-item {
         margin-bottom: var(--margin-3);
         transition   : .3s;
-    }
-
-    .nav-item:hover {
-        opacity: .7;
     }
 
     .active-nav-link {
