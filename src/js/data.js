@@ -36,10 +36,19 @@ export const portfolio = [
     {
         id: 3,
         category: 'JavaScript',
-        title: 'Room homepage',
+        title: 'Room Homepage',
         github: 'https://github.com/chianglynn/frontendmentor-room-homepage',
         demo: 'https://chianglynn.github.io/frontendmentor-room-homepage/',
         image: 'https://github.com/chianglynn/frontendmentor-room-homepage/blob/main/src/screenshot/screenshot-desktop.png?raw=true',
         skills: ['HTML', 'SCSS', 'JavaScript'],
+    },
+    {
+        id: 4,
+        category: 'React',
+        title: 'Comfy Sloth E-Commerce Website',
+        github: 'https://github.com/chianglynn/react-ecommerce-comfysloth',
+        demo: 'https://react-ecommerce-comfysloth.netlify.app',
+        image: 'https://github.com/chianglynn/react-ecommerce-comfysloth/blob/main/src/screenshot/screenshot.png?raw=true',
+        skills: ['React', 'styled-components'],
     },
 ];
