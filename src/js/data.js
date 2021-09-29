@@ -51,4 +51,13 @@ export const portfolio = [
         image: 'https://github.com/chianglynn/react-ecommerce-comfysloth/blob/main/src/screenshot/screenshot.png?raw=true',
         skills: ['React', 'styled-components'],
     },
+    {
+        id: 5,
+        category: 'JavaScript',
+        title: 'Stock Buy Point Tracker with Yahoo Finance API',
+        github: 'https://github.com/chianglynn/stock-buy-point-tracker',
+        demo: 'https://chianglynn.github.io/stock-buy-point-tracker/',
+        image: 'https://github.com/chianglynn/stock-buy-point-tracker/blob/main/src/screenshot/sreenshot.png?raw=true',
+        skills: ['HTML', 'CSS', 'JavaScript'],
+    },
 ];
