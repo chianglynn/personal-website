@@ -5,12 +5,19 @@ export const skills = [
     "Sass / SCSS",
     "Responsive Design (Mobile First)",
     "JavaScript",
-    "Node.js",
     "RESTful APIs",
     "React",
+    "Redux",
     "CSS-in-JS (styled-components)",
     "TypeScript",
     "Git / Version Control",
+    /* Will Learn
+    "Node.js",
+    "React Native",
+    "Vue.js",
+    "AngularJS",
+    "Automated Test (JEST, Mocha)",
+    */
 ];
 
 // Portfolio data
@@ -22,7 +29,7 @@ export const portfolio = [
         github: 'https://github.com/chianglynn/frontendmentor-easybank-landing-page',
         demo: 'https://chianglynn.github.io/frontendmentor-easybank-landing-page/',
         image: 'https://github.com/chianglynn/frontendmentor-easybank-landing-page/raw/main/src/screenshot/screenshot.png?raw=true',
-        skills: ['HTML', 'CSS', 'JavaScript'],
+        skills: ['JavaScript'],
     },
     {
         id: 2,
@@ -31,7 +38,7 @@ export const portfolio = [
         github: 'https://github.com/chianglynn/frontendmentor-rest-countries-api-with-color-theme-switcher',
         demo: 'https://chianglynn.github.io/frontendmentor-rest-countries-api-with-color-theme-switcher/',
         image: 'https://github.com/chianglynn/frontendmentor-rest-countries-api-with-color-theme-switcher/raw/main/src/screenshot/screenshot-light.png?raw=true',
-        skills: ['HTML', 'CSS', 'JavaScript'],
+        skills: ['JavaScript'],
     },
     {
         id: 3,
@@ -40,7 +47,7 @@ export const portfolio = [
         github: 'https://github.com/chianglynn/frontendmentor-room-homepage',
         demo: 'https://chianglynn.github.io/frontendmentor-room-homepage/',
         image: 'https://github.com/chianglynn/frontendmentor-room-homepage/blob/main/src/screenshot/screenshot-desktop.png?raw=true',
-        skills: ['HTML', 'SCSS', 'JavaScript'],
+        skills: ['SCSS', 'JavaScript'],
     },
     {
         id: 4,
@@ -58,6 +65,6 @@ export const portfolio = [
         github: 'https://github.com/chianglynn/stock-buy-point-tracker',
         demo: 'https://chianglynn.github.io/stock-buy-point-tracker/',
         image: 'https://github.com/chianglynn/stock-buy-point-tracker/blob/main/src/screenshot/sreenshot.png?raw=true',
-        skills: ['HTML', 'CSS', 'JavaScript'],
+        skills: ['JavaScript'],
     },
 ];
